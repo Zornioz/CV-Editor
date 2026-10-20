@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bewerbungsstudio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314284b'/%3E%3Cpath d='M10 8h8l4 4v12H10z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M13 16h6M13 20h6' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/doc.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="logo" data-ico="cvdoc"></span><b>Bewerbungsstudio</b></div>
+    <div class="projbox">
+      <input id="projName" type="text" spellcheck="false" aria-label="Projektname" title="Name dieser Bewerbung">
+      <button id="btnProjects" class="icon-btn" type="button" title="Alle Bewerbungen verwalten" data-ico="folder"></button>
+    </div>
+    <nav class="doctabs" id="docTabs" aria-label="Dokument wählen"></nav>
+    <div class="grow"></div>
+    <span class="pagecount" id="pageCount" title="Seitenanzahl des aktuellen Dokuments"></span>
+    <div class="tgroup">
+      <button id="btnUndo" class="icon-btn" type="button" title="Rückgängig (Strg+Z)" data-ico="undo"></button>
+      <button id="btnRedo" class="icon-btn" type="button" title="Wiederholen (Strg+Y)" data-ico="redo"></button>
+    </div>
+    <div class="tgroup">
+      <button id="btnZoomOut" class="icon-btn" type="button" title="Verkleinern" data-ico="zoomout"></button>
+      <button id="zoomLabel" class="zoomlabel" type="button" title="An Breite anpassen (Strg+0)">100 %</button>
+      <button id="btnZoomIn" class="icon-btn" type="button" title="Vergrößern" data-ico="zoomin"></button>
+    </div>
+    <button id="btnPreview" class="btn ghost" type="button" title="Bearbeitungshilfen ausblenden"><span data-ico="eye"></span>Vorschau</button>
+    <button id="btnMore" class="icon-btn" type="button" title="Mehr" data-ico="more"></button>
+    <button id="btnPrint" class="btn primary" type="button"><span data-ico="print"></span>PDF / Drucken</button>
+  </header>
+  <div class="workspace">
+    <aside class="panel">
+      <nav class="ptabs" id="ptabs"></nav>
+      <div class="pbody" id="panelBody"></div>
+    </aside>
+    <main class="stage" id="stage">
+      <div id="zoomBox"><div id="zoomInner"></div></div>
+    </main>
+  </div>
+</div>
+<div id="printRoot"></div>
+<div id="offscreen" aria-hidden="true"></div>
+<div id="richbar" class="richbar" hidden></div>
+<div id="toasts"></div>
+<input type="file" id="fileImage" accept="image/*" hidden>
+<input type="file" id="fileImport" accept=".json,application/json" hidden>
+
+<script src="js/util.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
